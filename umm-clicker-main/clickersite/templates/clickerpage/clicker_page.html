@@ -1,0 +1,31 @@
+{% extends "clickerpage/layout.html" %}
+{% block title %}
+    {{ speaker }}
+{% endblock %}
+{% block content %}
+    <h1><b>CURRENTLY TRACKING:<br><span class="message">{{ speaker }}</span></b></h1>
+    <p>mean delta time: <span class="message">{{ dtime }}</span></p>
+    <form action="/time/{{speaker}}" method="post">
+        {% csrf_token %}
+        <input type="submit" id="umm" value="Ummm...">
+    </form>
+    <br>
+        <table class="center">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Delta Time</th>
+                </tr>
+            </thead>
+            {% if times %}
+            <tbody>
+                {% for time in times %}
+                <tr>
+                    <td>{{ time.time | date:"H:i:s"}}</td>
+                    <td>-</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+{% endblock %}

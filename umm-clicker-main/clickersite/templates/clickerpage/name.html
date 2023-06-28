@@ -1,0 +1,12 @@
+{% extends "clickerpage/layout.html" %}
+{% block title %}
+Enter name
+{% endblock %}
+{% block content %}
+    <h1>Enter the name of the presentor:</h1>
+    <form method="post" action="/">
+        {% csrf_token %}
+        <input id="name" name="name" type="text">
+        <input id="sendname" type="submit" value="GO TO SPEAKER" method="post">
+    </form>
+{% endblock %}

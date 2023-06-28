@@ -1,0 +1,14 @@
+html {
+    text-align: center;
+}
+
+.message {
+    font-weight: 600;
+    color: blue;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
